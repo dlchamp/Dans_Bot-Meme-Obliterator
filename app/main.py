@@ -13,7 +13,6 @@ bot = commands.Bot(
     commands_prefix="-",
     help_command=None,
     case_sensitive=True,
-    test_guilds=[778812053980315649],
 )
 
 # Load command cogs
