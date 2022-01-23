@@ -53,7 +53,7 @@ async def obliterator_loop():
         count = 0
 
         # iterate through channel messages and remove any messages that do not meet the min limit
-        async for message in channel.history(limit=500):
+        async for message in channel.history(limit=100):
             created_at = message.created_at
             if created_at > last_run:
                 if len(message.reactions) < min_limit:
