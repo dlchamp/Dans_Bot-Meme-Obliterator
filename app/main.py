@@ -43,6 +43,7 @@ async def obliterator_loop():
 
     min_limit = config["min_limit"]
     channel = config["channel"]
+    last_run = config['last_run']
     if not channel is None:
         channel = await bot.fetch_channel(config["channel"])
         if not last_run is None:
