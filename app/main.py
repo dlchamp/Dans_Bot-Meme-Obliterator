@@ -50,6 +50,11 @@ async def obliterator_loop():
             last_run = datetime.datetime.strptime(
                 config["last_run"], "%Y-%m-%d %H:%M:%S.%f%z"
             )
+        else:
+            # get today and set last_run to 30 days previous
+            now = datetime.datetime.now(datetime.timezone.utc)
+            last_run = now + datetime.timedelta(days=-30)
+
         count = 0
 
         # iterate through channel messages and remove any messages that do not meet the min limit
