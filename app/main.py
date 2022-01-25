@@ -13,7 +13,7 @@ bot = commands.Bot(
     commands_prefix="-",
     help_command=None,
     case_sensitive=True
-)
+    )
 
 # Load command cogs
 for filename in os.listdir("./cogs"):
@@ -58,7 +58,7 @@ async def obliterator_loop():
     else:
         limit = 100
 
-    channel = await bot.fetch_channel(config["channel"])
+    channel = await bot.fetch_channel(channel)
     # iterate through text channel messages - if no last run, iterate whole channel.  if last run, only iterate last 100 messages
     async for message in channel.history(limit=limit):
         created_at = message.created_at
