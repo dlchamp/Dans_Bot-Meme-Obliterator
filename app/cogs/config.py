@@ -30,10 +30,14 @@ class Config(commands.Cog):
 
         channel_id = config["channel"]
         min_limit = config["min_limit"]
-        last_run = datetime.datetime.strptime(
-            config["last_run"], "%Y-%m-%d %H:%M:%S.%f%z"
-        ).date()
-        next_run = last_run + datetime.timedelta(hours=168)
+        if config["last_run"] is None:
+            last_run = "None"
+            next_run = "None"
+        else:
+            last_run = datetime.datetime.strptime(
+                config["last_run"], "%Y-%m-%d %H:%M:%S.%f%z"
+            ).date()
+            next_run = last_run + datetime.timedelta(hours=168)
 
         channel = inter.guild.get_channel(channel_id)
         message = f'Current Channel: {channel}\nMinimum Reaction Limit: {min_limit}\nLast Run: {last_run.strftime("%m/%d/%y")}\nExpected next run: {next_run.strftime("%m/%d/%y")}'
