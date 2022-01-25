@@ -12,8 +12,7 @@ load_dotenv()
 bot = commands.Bot(
     commands_prefix="-",
     help_command=None,
-    test_guilds=[778812053980315649],
-    case_sensitive=True,
+    case_sensitive=True
 )
 
 # Load command cogs
