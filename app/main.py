@@ -4,7 +4,6 @@ import datetime
 
 import disnake
 from disnake.ext import commands, tasks
-
 from dotenv import load_dotenv
 
 load_dotenv()
